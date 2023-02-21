@@ -37,11 +37,11 @@ jobs:
             - uses: cognitedata/inso-bootstrap-cli@main
               env:
                   BOOTSTRAP_IDP_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-                  BOOTSTRAP_CDF_HOST: ${{ env.CDF_HOST }}
+                  BOOTSTRAP_CDF_HOST: ${{ .env.CDF_HOST }}
                   BOOTSTRAP_CDF_PROJECT: ${{ matrix.CDF_PROJECT }}
                   BOOTSTRAP_IDP_CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
                   BOOTSTRAP_IDP_TOKEN_URL: https://login.microsoftonline.com/${{ matrix.IDP_TENANT }}/oauth2/v2.0/token
-                  BOOTSTRAP_IDP_SCOPES: ${{ env.CDF_HOST }}.default
+                  BOOTSTRAP_IDP_SCOPES: ${{ .env.CDF_HOST }}.default
 
               with:
                   # Path to Bootstrap CLI configuration file
