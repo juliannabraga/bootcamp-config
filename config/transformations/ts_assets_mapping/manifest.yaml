@@ -2,18 +2,8 @@
 # Manifest file downloaded from fusion
 externalId: tr-ts_assets_mapping
 name: ts_assets_mapping
-query: >
-    /* MAPPING_MODE_ENABLED: false */
-
-    /* {"version":1,"sourceType":"raw","mappings":[{"from":"","to":"id"},{"from":"","to":"name"},{"from":"","to":"externalId"},{"from":"","to":"metadata"},{"from":"","to":"unit"},{"from":"","to":"assetId"},{"from":"","to":"description"},{"from":"","to":"securityCategories"},{"from":"","to":"isStep"},{"from":"","to":"isString"},{"from":"","to":"dataSetId"}]}
-    */
-
-
-    SELECT ts.externalId AS externalId,
-           ast.id AS assetId
-    FROM `_cdf`.`timeseries` AS ts
-
-    INNER JOIN `_cdf`.`assets` AS ast ON split(ts.externalId, ":") [0] = ast.externalId
+query:
+    file: transformation.sql
 destination:
     type: timeseries
 ignoreNullFields: true
@@ -22,7 +12,7 @@ action: update
 dataSetExternalId: uc:001:oee:ds
 authentication:
     clientId: 4e4f7ada-06bc-40a2-af71-1752f553a0fa
-    clientSecret: Gwx8Q~ZqSCkYAnvMk-4gDTMYRvs-wsb69eVKccn.
+    clientSecret: wyl8Q~CM0vrgrpvAFXUFSCJElr3A2i1wuIY5BcCE
     tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
   # Optional: If idP requires providing the scopes
     cdfProjectName: cdf-bootcamp-21-test
