@@ -1,21 +1,22 @@
 ---
 # Manifest file downloaded from fusion
-externalId: tr-create_asset_hierarchy
-name: create_asset_hierarchy
+externalId: tr-create_asset_hierarchy_ui
+name: create_asset_hierarchy_ui
 query:
     file: transformation.sql
-    destination:
-        type: asset_hierarchy
+destination:
+    type: asset_hierarchy
 ignoreNullFields: true
 shared: true
 action: upsert
 schedule:
     interval: 53 20 * * 3
-    isPaused: false
+    isPaused: true
 dataSetExternalId: src:001:sap:ds
+# Specify credentials separately like this:
 authentication:
     clientId: 4e4f7ada-06bc-40a2-af71-1752f553a0fa
-    clientSecret: Gwx8Q~ZqSCkYAnvMk-4gDTMYRvs-wsb69eVKccn.
+    clientSecret: wyl8Q~CM0vrgrpvAFXUFSCJElr3A2i1wuIY5BcCE
     tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
   # Optional: If idP requires providing the scopes
     cdfProjectName: cdf-bootcamp-21-test
