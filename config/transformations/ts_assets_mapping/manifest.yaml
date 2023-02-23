@@ -11,10 +11,10 @@ shared: true
 action: update
 dataSetExternalId: uc:001:oee:ds
 authentication:
-    clientId: 4e4f7ada-06bc-40a2-af71-1752f553a0fa
-    clientSecret: wyl8Q~CM0vrgrpvAFXUFSCJElr3A2i1wuIY5BcCE
+    clientId: ${COGNITE_CLIENT_ID}
+    clientSecret: ${COGNITE_CLIENT_SECRET}
     tokenUrl: https://login.microsoftonline.com/16e3985b-ebe8-4e24-9da4-933e21a9fc81/oauth2/v2.0/token
   # Optional: If idP requires providing the scopes
-    cdfProjectName: cdf-bootcamp-21-test
+    cdfProjectName: ${CDF_PROJECT_NAME}
     scopes:
         - https://westeurope-1.cognitedata.com/.default
